@@ -17,14 +17,17 @@ Layout constants MUST stay in sync with the board config
 
 from pathlib import Path
 
-W, H = 230.0, 300.0
+W, H = 230.0, 320.0
 CX, CY, R_PCB, R_SCR = 115.0, 110.0, 105.0, 92.0
 LEFT_X, RIGHT_X = 95.0, 135.0
 START_Y, ROW = 235.0, 15.0
-N = 4  # rows (4 per column, 8 pins total)
+N = 4  # UART/I2C rows (4 per column)
 
 UART = ["GND", "RXD", "TXD", "3V3"]   # left column, top -> bottom
 I2C = ["GND", "3V3", "SCL", "SDA"]    # right column, top -> bottom
+# 5th row = USB-C 5 V power input (VBUS); the 2.8C has no 5 V header pin, power
+# really enters via USB-C - modelled here as a pin so the buck can be wired.
+PWR = ["5V", "GND"]                   # left, right
 
 
 def build() -> str:
@@ -33,7 +36,7 @@ def build() -> str:
     # --- neck connecting the round board to the bottom header tab ---
     s.append(f'<rect x="{CX - 42}" y="{CY + 70}" width="84" height="70" rx="6" fill="#17171c" stroke="#33333a" stroke-width="0.8"/>')
     # --- header tab (bottom) ---
-    s.append(f'<rect x="{CX - 60}" y="222" width="120" height="72" rx="7" fill="#1b1b20" stroke="#3a3a42" stroke-width="1.1"/>')
+    s.append(f'<rect x="{CX - 60}" y="222" width="120" height="90" rx="7" fill="#1b1b20" stroke="#3a3a42" stroke-width="1.1"/>')
     # --- round PCB ---
     s.append(f'<circle cx="{CX}" cy="{CY}" r="{R_PCB}" fill="#1b1b20" stroke="#3a3a42" stroke-width="1.4"/>')
     s.append(f'<circle cx="{CX}" cy="{CY}" r="{R_PCB - 3}" fill="none" stroke="#2c2c34" stroke-width="0.6"/>')
@@ -74,6 +77,14 @@ def build() -> str:
         s.append(f'<circle cx="{RIGHT_X}" cy="{y}" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>')
         label(LEFT_X, y, UART[i], "end", -6.5)    # UART labels flank left
         label(RIGHT_X, y, I2C[i], "start", 6.5)   # I2C labels flank right
+    # 5th row: USB-C 5 V input, separated from the UART/I2C headers by a divider
+    py = START_Y + N * ROW
+    s.append(f'<line x1="{CX - 53}" y1="{py - 8}" x2="{CX + 53}" y2="{py - 8}" stroke="#3a3a42" stroke-width="0.7"/>')
+    s.append(f'<circle cx="{LEFT_X}" cy="{py}" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>')
+    s.append(f'<circle cx="{RIGHT_X}" cy="{py}" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>')
+    label(LEFT_X, py, PWR[0], "end", -6.5)
+    label(RIGHT_X, py, PWR[1], "start", 6.5)
+    s.append(f'<text x="{CX}" y="{py + 1.4}" font-family="Arial, sans-serif" font-size="3.6" fill="#6a6d75" text-anchor="middle">USB 5V</text>')
     s.append("</svg>")
     return "\n".join(s) + "\n"
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230.0 300.0" width="230.0" height="300.0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230.0 320.0" width="230.0" height="320.0">
 <rect x="73.0" y="180.0" width="84" height="70" rx="6" fill="#17171c" stroke="#33333a" stroke-width="0.8"/>
-<rect x="55.0" y="222" width="120" height="72" rx="7" fill="#1b1b20" stroke="#3a3a42" stroke-width="1.1"/>
+<rect x="55.0" y="222" width="120" height="90" rx="7" fill="#1b1b20" stroke="#3a3a42" stroke-width="1.1"/>
 <circle cx="115.0" cy="110.0" r="105.0" fill="#1b1b20" stroke="#3a3a42" stroke-width="1.4"/>
 <circle cx="115.0" cy="110.0" r="102.0" fill="none" stroke="#2c2c34" stroke-width="0.6"/>
 <circle cx="185.0" cy="40.0" r="3.2" fill="#0d0d10" stroke="#8a8a90" stroke-width="0.8"/>
@@ -38,4 +38,10 @@
 <circle cx="135.0" cy="280.0" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>
 <text x="88.5" y="281.5" font-family="Consolas, Menlo, monospace" font-size="5" fill="#e9e9ef" text-anchor="end">3V3</text>
 <text x="141.5" y="281.5" font-family="Consolas, Menlo, monospace" font-size="5" fill="#e9e9ef" text-anchor="start">SDA</text>
+<line x1="62.0" y1="287.0" x2="168.0" y2="287.0" stroke="#3a3a42" stroke-width="0.7"/>
+<circle cx="95.0" cy="295.0" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>
+<circle cx="135.0" cy="295.0" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>
+<text x="88.5" y="296.5" font-family="Consolas, Menlo, monospace" font-size="5" fill="#e9e9ef" text-anchor="end">5V</text>
+<text x="141.5" y="296.5" font-family="Consolas, Menlo, monospace" font-size="5" fill="#e9e9ef" text-anchor="start">GND</text>
+<text x="115.0" y="296.4" font-family="Arial, sans-serif" font-size="3.6" fill="#6a6d75" text-anchor="middle">USB 5V</text>
 </svg>

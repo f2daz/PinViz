@@ -2,7 +2,7 @@
   "name": "ESP32-S3-Touch-LCD-2.8C",
   "svg_asset": "esp32_s3_touch_lcd_28c_mod.svg",
   "width": 230.0,
-  "height": 300.0,
+  "height": 320.0,
   "header_offset": {
     "x": 0,
     "y": 0
@@ -24,6 +24,8 @@
     {"physical_pin": 5, "name": "GPIO43", "role": "UART_TX", "gpio_bcm": 43},
     {"physical_pin": 6, "name": "GPIO7",  "role": "I2C_SCL", "gpio_bcm": 7},
     {"physical_pin": 7, "name": "3V3",    "role": "3V3",     "gpio_bcm": null},
-    {"physical_pin": 8, "name": "GPIO15", "role": "I2C_SDA", "gpio_bcm": 15}
+    {"physical_pin": 8, "name": "GPIO15", "role": "I2C_SDA", "gpio_bcm": 15},
+    {"physical_pin": 9, "name": "5V",     "role": "5V",      "gpio_bcm": null},
+    {"physical_pin": 10, "name": "GND",   "role": "GND",     "gpio_bcm": null}
   ]
 }

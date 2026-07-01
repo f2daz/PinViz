@@ -31,10 +31,17 @@ connections:
   - from: {device: "SN65HVD230 CAN Transceiver", device_pin: "CANL"}
     to: {device: "OBD Y-Splitter", device_pin: "CANL"}
     color: "#0090a0"
-  # --- Versorgung: OBD-Port 12 V (separater Pin, NICHT CAN) -> Buck -> 5 V (Board USB-C) ---
-  - from: {device: "OBD Y-Splitter", device_pin: "12V"}
-    to: {device: "Buck 12V->5V", device_pin: "12V"}
+  # --- Versorgung: OBD-Port 12 V (separater Pin, NICHT CAN) -> Buck -> 5 V -> Board USB-C ---
+  - from: {device: "Buck 12V->5V", device_pin: "12V"}
+    to: {device: "OBD Y-Splitter", device_pin: "12V"}
     color: red
-  - from: {device: "OBD Y-Splitter", device_pin: "GND"}
-    to: {device: "Buck 12V->5V", device_pin: "GND_IN"}
+  - from: {device: "Buck 12V->5V", device_pin: "GND_IN"}
+    to: {device: "OBD Y-Splitter", device_pin: "GND"}
+    color: black
+  # 5 V vom Buck an den ESP (USB-C 5 V). Der SN65HVD230 bleibt an Board-3V3 (3,3-V-Bauteil)!
+  - from: {board_pin: 9}          # Board USB-C 5V
+    to: {device: "Buck 12V->5V", device_pin: "5V"}
+    color: red
+  - from: {board_pin: 10}         # Board USB-C GND
+    to: {device: "Buck 12V->5V", device_pin: "GND_OUT"}
     color: black

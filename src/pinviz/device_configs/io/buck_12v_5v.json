@@ -4,10 +4,10 @@
   "category": "io",
   "description": "Automotive step-down converter (e.g. LM2596/MP1584). Turns the vehicle 12 V into a clean 5 V rail for the ESP32-S3 (fed into the board's USB-C / 5 V input).",
   "pins": [
-    {"name": "12V",     "role": "5V",  "side": "left"},
-    {"name": "GND_IN",  "role": "GND", "side": "left"},
-    {"name": "5V",      "role": "5V",  "side": "right"},
-    {"name": "GND_OUT", "role": "GND", "side": "right"}
+    {"name": "5V",      "role": "5V",  "side": "left"},
+    {"name": "GND_OUT", "role": "GND", "side": "left"},
+    {"name": "12V",     "role": "5V",  "side": "right"},
+    {"name": "GND_IN",  "role": "GND", "side": "right"}
   ],
   "display": {
     "width": 110.0
