@@ -6,11 +6,15 @@
   "pins": [
     {"name": "CANH", "role": "GPIO", "side": "left"},
     {"name": "CANL", "role": "GPIO", "side": "left"},
-    {"name": "12V", "role": "5V", "side": "right"},
-    {"name": "GND", "role": "GND", "side": "right"}
+    {"name": "12V",  "role": "5V",   "side": "left"},
+    {"name": "GND",  "role": "GND",  "side": "left"},
+    {"name": "CANH ", "role": "GPIO", "side": "right"},
+    {"name": "CANL ", "role": "GPIO", "side": "right"},
+    {"name": "12V ",  "role": "5V",   "side": "right"},
+    {"name": "GND ",  "role": "GND",  "side": "right"}
   ],
   "display": {
-    "width": 130.0
+    "width": 150.0
   },
   "datasheet_url": "https://www.te.com/en/products/brands/deutsch.html",
   "notes": "The 6-pin diagnostic port carries CAN-H/CAN-L, GND and 12 V on separate pins (12 V is NOT on the CAN lines). Verify pin positions with a multimeter (~60 Ohm across the CAN pair). No termination resistor in the stub. The port 12 V is only weakly fused - for a display prefer a separate switched 12 V feed."

@@ -11,37 +11,47 @@ devices:
     name: Buck 12V->5V
 
 connections:
-  # --- UART-Header (RoundDash) -> Transceiver (Logikseite) ---
+  # --- UART-Header (RoundDash) -> Transceiver (Logikseite, 3,3 V!) ---
   - from: {board_pin: 7}          # UART 3V3
     to: {device: "SN65HVD230 CAN Transceiver", device_pin: "3V3"}
     color: red
+    style: curved
   - from: {board_pin: 1}          # UART GND
     to: {device: "SN65HVD230 CAN Transceiver", device_pin: "GND"}
     color: black
+    style: curved
   - from: {board_pin: 5}          # TXD = GPIO43 -> CAN_TX
     to: {device: "SN65HVD230 CAN Transceiver", device_pin: "CTX"}
     color: blue
+    style: curved
   - from: {board_pin: 3}          # RXD = GPIO44 -> CAN_RX
     to: {device: "SN65HVD230 CAN Transceiver", device_pin: "CRX"}
     color: green
-  # --- Transceiver (Busseite) -> OBD-Y-Splitter (Deutsch DT) ---
+    style: curved
+  # --- Transceiver (Busseite) -> OBD-Y-Splitter (1:1-Durchgang) ---
   - from: {device: "SN65HVD230 CAN Transceiver", device_pin: "CANH"}
     to: {device: "OBD Y-Splitter", device_pin: "CANH"}
     color: "#d98a00"
+    style: curved
   - from: {device: "SN65HVD230 CAN Transceiver", device_pin: "CANL"}
     to: {device: "OBD Y-Splitter", device_pin: "CANL"}
     color: "#0090a0"
-  # --- Versorgung: OBD-Port 12 V (separater Pin, NICHT CAN) -> Buck -> 5 V -> Board USB-C ---
+    style: curved
+  # --- Versorgung: Buck 12 V <- OBD-Port (separater Pin, NICHT CAN) ---
   - from: {device: "Buck 12V->5V", device_pin: "12V"}
     to: {device: "OBD Y-Splitter", device_pin: "12V"}
     color: red
+    style: curved
   - from: {device: "Buck 12V->5V", device_pin: "GND_IN"}
     to: {device: "OBD Y-Splitter", device_pin: "GND"}
     color: black
-  # 5 V vom Buck an den ESP (USB-C 5 V). Der SN65HVD230 bleibt an Board-3V3 (3,3-V-Bauteil)!
+    style: curved
+  # --- Buck 5 V -> ESP (Board USB-C). Transceiver bleibt an 3V3! ---
   - from: {board_pin: 9}          # Board USB-C 5V
     to: {device: "Buck 12V->5V", device_pin: "5V"}
     color: red
+    style: curved
   - from: {board_pin: 10}         # Board USB-C GND
     to: {device: "Buck 12V->5V", device_pin: "GND_OUT"}
     color: black
+    style: curved
