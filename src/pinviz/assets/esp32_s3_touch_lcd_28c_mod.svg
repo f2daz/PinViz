@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230.0 300.0" width="230.0" height="300.0">
+<rect x="73.0" y="180.0" width="84" height="70" rx="6" fill="#17171c" stroke="#33333a" stroke-width="0.8"/>
+<rect x="55.0" y="222" width="120" height="72" rx="7" fill="#1b1b20" stroke="#3a3a42" stroke-width="1.1"/>
+<circle cx="115.0" cy="110.0" r="105.0" fill="#1b1b20" stroke="#3a3a42" stroke-width="1.4"/>
+<circle cx="115.0" cy="110.0" r="102.0" fill="none" stroke="#2c2c34" stroke-width="0.6"/>
+<circle cx="185.0" cy="40.0" r="3.2" fill="#0d0d10" stroke="#8a8a90" stroke-width="0.8"/>
+<circle cx="45.0" cy="40.0" r="3.2" fill="#0d0d10" stroke="#8a8a90" stroke-width="0.8"/>
+<circle cx="45.0" cy="180.0" r="3.2" fill="#0d0d10" stroke="#8a8a90" stroke-width="0.8"/>
+<circle cx="185.0" cy="180.0" r="3.2" fill="#0d0d10" stroke="#8a8a90" stroke-width="0.8"/>
+<circle cx="115.0" cy="110.0" r="94.0" fill="#0a0a0c" stroke="#45454e" stroke-width="1"/>
+<circle cx="115.0" cy="110.0" r="92.0" fill="#0c0f14"/>
+<ellipse cx="89.0" cy="76.0" rx="40" ry="26" fill="#12161d" opacity="0.7"/>
+<circle cx="115.0" cy="110.0" r="91.0" fill="none" stroke="#20242c" stroke-width="0.5"/>
+<text x="115.0" y="104.0" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3a4048" text-anchor="middle">ESP32-S3</text>
+<text x="115.0" y="116.0" font-family="Arial, sans-serif" font-size="6" fill="#333942" text-anchor="middle">Touch LCD 2.8C</text>
+<text x="115.0" y="126.0" font-family="Arial, sans-serif" font-size="5" fill="#2f353d" text-anchor="middle">480 x 480</text>
+<rect x="103.0" y="1.0" width="24" height="15" rx="2.4" fill="#d3d6dc" stroke="#7d818a" stroke-width="0.9"/>
+<rect x="104.5" y="2.6" width="21" height="12" rx="1.6" fill="none" stroke="#b9bdc4" stroke-width="0.5"/>
+<rect x="208.0" y="102.0" width="12" height="16" rx="1.4" fill="#e6e7ea" stroke="#8a8a90" stroke-width="0.6"/>
+<text x="214.0" y="130.0" font-family="Arial, sans-serif" font-size="4" fill="#7f7f88" text-anchor="middle">BAT</text>
+<circle cx="22.0" cy="110.0" r="2.4" fill="#8fe0a0" stroke="#5a8a66" stroke-width="0.4"/>
+<text x="95.0" y="228" font-family="Arial, sans-serif" font-size="5.5" font-weight="bold" fill="#8f939b" text-anchor="middle">UART</text>
+<text x="135.0" y="228" font-family="Arial, sans-serif" font-size="5.5" font-weight="bold" fill="#8f939b" text-anchor="middle">I2C</text>
+<circle cx="95.0" cy="235.0" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>
+<circle cx="135.0" cy="235.0" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>
+<text x="88.5" y="236.5" font-family="Consolas, Menlo, monospace" font-size="5" fill="#e9e9ef" text-anchor="end">GND</text>
+<text x="141.5" y="236.5" font-family="Consolas, Menlo, monospace" font-size="5" fill="#e9e9ef" text-anchor="start">GND</text>
+<circle cx="95.0" cy="250.0" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>
+<circle cx="135.0" cy="250.0" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>
+<text x="88.5" y="251.5" font-family="Consolas, Menlo, monospace" font-size="5" fill="#e9e9ef" text-anchor="end">RXD</text>
+<text x="141.5" y="251.5" font-family="Consolas, Menlo, monospace" font-size="5" fill="#e9e9ef" text-anchor="start">3V3</text>
+<circle cx="95.0" cy="265.0" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>
+<circle cx="135.0" cy="265.0" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>
+<text x="88.5" y="266.5" font-family="Consolas, Menlo, monospace" font-size="5" fill="#e9e9ef" text-anchor="end">TXD</text>
+<text x="141.5" y="266.5" font-family="Consolas, Menlo, monospace" font-size="5" fill="#e9e9ef" text-anchor="start">SCL</text>
+<circle cx="95.0" cy="280.0" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>
+<circle cx="135.0" cy="280.0" r="4.4" fill="#d8b24a" stroke="#8a6f22" stroke-width="0.5"/>
+<text x="88.5" y="281.5" font-family="Consolas, Menlo, monospace" font-size="5" fill="#e9e9ef" text-anchor="end">3V3</text>
+<text x="141.5" y="281.5" font-family="Consolas, Menlo, monospace" font-size="5" fill="#e9e9ef" text-anchor="start">SDA</text>
+</svg>

@@ -534,6 +534,20 @@ def esp32_s3_devkitc1_schematic() -> Board:
     return load_board_from_config("esp32_s3_devkitc1_schematic")
 
 
+def esp32_s3_touch_lcd_28c() -> Board:
+    """
+    Create a Waveshare ESP32-S3-Touch-LCD-2.8C (round) board.
+
+    Round 2.8" 480x480 display board. Only the two bottom edge headers are broken
+    out and modelled here: UART (GND, RXD/GPIO44, TXD/GPIO43, 3V3) on the left
+    column and I2C (GND, 3V3, SCL/GPIO7, SDA/GPIO15) on the right column.
+
+    Returns:
+        Board: Configured ESP32-S3-Touch-LCD-2.8C board (8 header pins)
+    """
+    return load_board_from_config("esp32_s3_touch_lcd_28c")
+
+
 def get_available_boards() -> list[dict[str, str | list[str]]]:
     """
     Get a list of all available board configurations.

@@ -1,0 +1,26 @@
+title: RoundDash M8 — CAN via SN65HVD230
+board: esp32_s3_touch_lcd_28c
+theme: light
+
+devices:
+  - type: sn65hvd230
+    name: SN65HVD230 CAN Transceiver
+
+connections:
+  # UART-Header (Bike-OBD-Abgriff): 3V3 / GND / TXD=GPIO43 / RXD=GPIO44
+  - board_pin: 7            # UART 3V3
+    device: SN65HVD230 CAN Transceiver
+    device_pin: "3V3"
+    color: red
+  - board_pin: 1            # UART GND
+    device: SN65HVD230 CAN Transceiver
+    device_pin: "GND"
+    color: black
+  - board_pin: 5            # TXD = GPIO43 -> CAN_TX -> CTX
+    device: SN65HVD230 CAN Transceiver
+    device_pin: "CTX"
+    color: blue
+  - board_pin: 3            # RXD = GPIO44 -> CAN_RX -> CRX
+    device: SN65HVD230 CAN Transceiver
+    device_pin: "CRX"
+    color: green

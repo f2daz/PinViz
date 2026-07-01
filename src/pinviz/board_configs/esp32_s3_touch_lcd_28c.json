@@ -1,0 +1,29 @@
+{
+  "name": "ESP32-S3-Touch-LCD-2.8C",
+  "svg_asset": "esp32_s3_touch_lcd_28c_mod.svg",
+  "width": 230.0,
+  "height": 300.0,
+  "header_offset": {
+    "x": 0,
+    "y": 0
+  },
+  "render_mode": "svg_asset",
+  "svg_scale": 1.6,
+  "show_pin_names": false,
+  "layout": {
+    "left_col_x": 95.0,
+    "right_col_x": 135.0,
+    "start_y": 235.0,
+    "row_spacing": 15.0
+  },
+  "pins": [
+    {"physical_pin": 1, "name": "GND",    "role": "GND",     "gpio_bcm": null},
+    {"physical_pin": 2, "name": "GND",    "role": "GND",     "gpio_bcm": null},
+    {"physical_pin": 3, "name": "GPIO44", "role": "UART_RX", "gpio_bcm": 44},
+    {"physical_pin": 4, "name": "3V3",    "role": "3V3",     "gpio_bcm": null},
+    {"physical_pin": 5, "name": "GPIO43", "role": "UART_TX", "gpio_bcm": 43},
+    {"physical_pin": 6, "name": "GPIO7",  "role": "I2C_SCL", "gpio_bcm": 7},
+    {"physical_pin": 7, "name": "3V3",    "role": "3V3",     "gpio_bcm": null},
+    {"physical_pin": 8, "name": "GPIO15", "role": "I2C_SDA", "gpio_bcm": 15}
+  ]
+}

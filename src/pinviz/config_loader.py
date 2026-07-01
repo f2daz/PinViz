@@ -296,6 +296,11 @@ class ConfigLoader:
             "esp32_s3_devkitc1_schematic": boards.esp32_s3_devkitc1_schematic,
             "esp32s3_schematic": boards.esp32_s3_devkitc1_schematic,
             "esp32_s3_schematic": boards.esp32_s3_devkitc1_schematic,
+            # Waveshare ESP32-S3-Touch-LCD-2.8C (round)
+            "esp32_s3_touch_lcd_28c": boards.esp32_s3_touch_lcd_28c,
+            "esp32_s3_touch_lcd_2_8c": boards.esp32_s3_touch_lcd_28c,
+            "waveshare_28c": boards.esp32_s3_touch_lcd_28c,
+            "rounddash_28c": boards.esp32_s3_touch_lcd_28c,
             # Wemos D1 Mini
             "wemos_d1_mini": boards.wemos_d1_mini,
             "d1mini": boards.wemos_d1_mini,
