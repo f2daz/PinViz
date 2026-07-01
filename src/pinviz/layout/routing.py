@@ -425,6 +425,7 @@ class WireRouter:
                 wire["is_source_right_side"],
                 wire["is_target_right_side"],
             )
+            path_points = self._align_exit_tangent(path_points)
 
             # Sample points along the path (simplified - use path points directly)
             samples = []
@@ -584,6 +585,7 @@ class WireRouter:
                 wire_info["is_source_right_side"],
                 wire_info["is_target_right_side"],
             )
+            path_points = self._align_exit_tangent(path_points)
 
             routed_wires.append(
                 RoutedWire(
@@ -622,6 +624,26 @@ class WireRouter:
             extended_end = Point(to_pos.x + self.constants.WIRE_PIN_EXTENSION, to_pos.y)
 
         return connection_point, extended_end
+
+    def _align_exit_tangent(self, path_points: list[Point]) -> list[Point]:
+        """
+        Make the curve's second control point collinear with the straight lead-in
+        into the pin (connection_point -> pin), so the Bezier meets that segment
+        tangent-continuously instead of at an angle (which shows up as a kink at
+        the device pin). Only applies to the 5-point curve+lead-in form.
+        """
+        if len(path_points) != 5:
+            return path_points
+        p0, _ctrl1, _ctrl2, cp, pin = path_points
+        ldx, ldy = pin.x - cp.x, pin.y - cp.y
+        lead_len = (ldx * ldx + ldy * ldy) ** 0.5
+        if lead_len <= 1e-6:
+            return path_points
+        ux, uy = ldx / lead_len, ldy / lead_len
+        span = ((cp.x - p0.x) ** 2 + (cp.y - p0.y) ** 2) ** 0.5
+        back = max(lead_len * 4.0, span * 0.30)
+        path_points[2] = Point(cp.x - ux * back, cp.y - uy * back)
+        return path_points
 
     def _calculate_gentle_arc_path(
         self,
