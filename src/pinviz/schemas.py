@@ -94,6 +94,7 @@ VALID_DEVICE_TYPES = {
     "relay_module",
     "sn65hvd230",
     "obd_y_splitter",
+    "buck_12v_5v",
     "single_pin_each_side",
     "spi_device",
     "spi",  # Alias for spi_device
