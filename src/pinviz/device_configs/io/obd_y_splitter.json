@@ -1,0 +1,15 @@
+{
+  "id": "obd_y_splitter",
+  "name": "OBD Y-Splitter (Deutsch DT 6P)",
+  "category": "io",
+  "description": "1:1 pass-through Y-adapter on the Harley M8 diagnostic port. Bike side DT06-6S -> two DT04-6P branches (Jekill & Hyde stays connected + RoundDash CAN tap). Only CAN-H/CAN-L are tapped for RoundDash.",
+  "pins": [
+    {"name": "CANH", "role": "GPIO", "side": "left"},
+    {"name": "CANL", "role": "GPIO", "side": "left"}
+  ],
+  "display": {
+    "width": 130.0
+  },
+  "datasheet_url": "https://www.te.com/en/products/brands/deutsch.html",
+  "notes": "Pin position of CAN-H/CAN-L on the 6-pin connector is not fixed - verify with a multimeter (~60 Ohm across the CAN pair). No termination resistor in the stub. Power the ESP32-S3 from a separate switched 12 V source, not from the diagnostic port."
+}
