@@ -2,20 +2,52 @@
   "id": "obd_y_splitter",
   "name": "OBD Y-Splitter (Deutsch DT 6P)",
   "category": "io",
-  "description": "1:1 pass-through Y-adapter on the Harley M8 diagnostic port. Bike side DT06-6S -> two DT04-6P branches (Jekill & Hyde stays connected + RoundDash CAN tap). Only CAN-H/CAN-L are tapped for RoundDash.",
+  "description": "1:1 pass-through Y-adapter on the Harley M8 diagnostic port. Bike side DT06-6S -> two DT04-6P branches (Jekill & Hyde stays connected + RoundDash CAN tap). Pin 2 CAN high (W/R), pin 3 ground (BK), pin 4 accessory power (R/Y), pin 5 CAN low (W/BK); pins 1 and 6 unused.",
   "pins": [
-    {"name": "CANH", "role": "GPIO", "side": "left"},
-    {"name": "CANL", "role": "GPIO", "side": "left"},
-    {"name": "12V",  "role": "5V",   "side": "left"},
-    {"name": "GND",  "role": "GND",  "side": "left"},
-    {"name": "CANH ", "role": "GPIO", "side": "right"},
-    {"name": "CANL ", "role": "GPIO", "side": "right"},
-    {"name": "12V ",  "role": "5V",   "side": "right"},
-    {"name": "GND ",  "role": "GND",  "side": "right"}
+    {
+      "name": "CANH W/R",
+      "role": "GPIO",
+      "side": "left"
+    },
+    {
+      "name": "CANL W/BK",
+      "role": "GPIO",
+      "side": "left"
+    },
+    {
+      "name": "ACC R/Y",
+      "role": "5V",
+      "side": "left"
+    },
+    {
+      "name": "GND BK",
+      "role": "GND",
+      "side": "left"
+    },
+    {
+      "name": "CANH W/R ",
+      "role": "GPIO",
+      "side": "right"
+    },
+    {
+      "name": "CANL W/BK ",
+      "role": "GPIO",
+      "side": "right"
+    },
+    {
+      "name": "ACC R/Y ",
+      "role": "5V",
+      "side": "right"
+    },
+    {
+      "name": "GND BK ",
+      "role": "GND",
+      "side": "right"
+    }
   ],
   "display": {
-    "width": 150.0
+    "width": 190.0
   },
   "datasheet_url": "https://www.te.com/en/products/brands/deutsch.html",
-  "notes": "The 6-pin diagnostic port carries CAN-H/CAN-L, GND and 12 V on separate pins (12 V is NOT on the CAN lines). Verify pin positions with a multimeter (~60 Ohm across the CAN pair). No termination resistor in the stub. The port 12 V is only weakly fused - for a display prefer a separate switched 12 V feed."
+  "notes": "Pinout confirmed from the 2019 Softail service manual, table A-39 'OBD [91C]'. Connector [91] DLC, 6-place Deutsch DT sealed, behind the left side cover. Pin 4 is SWITCHED accessory power supplied by the BCM - not permanent 12 V - so the display can be fed straight from the Y adapter. CAN runs as a twisted pair W/BK + W/R; keep the twist in the adapter. No termination resistor in the stub (~60 Ohm across pins 2 and 5 with ignition off is a quick sanity check)."
 }
